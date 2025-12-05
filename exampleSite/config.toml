@@ -1,9 +1,12 @@
 baseurl = "https://example.com"
 languageCode = "en"
 theme = "kiss-em"
-Paginate = 5 # Number of posts per page
 enableRobotsTXT = true
 defaultContentLanguage = "en"
+
+# Number of posts per page (neu ab Hugo >= 0.128.0)
+[pagination]
+  pagerSize = 5
 
 [languages]
   [languages.de]
@@ -14,6 +17,7 @@ defaultContentLanguage = "en"
     weight = 1
 
 [params.microblog]
+enable = true
 number = 2
 
 [params.assets]
@@ -42,6 +46,6 @@ rss = "index.xml"
 platforms = ["about", "email", "github", "twitter", "xing", "rss"]
 
 [taxonomies]
-tag ="tags"
+tag = "tags"
 
 
