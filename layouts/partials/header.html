@@ -16,7 +16,12 @@
         </title>
         
         {{ if .Site.Params.rss.enable }}
-            <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+            {{ with .Site.Home.OutputFormats.Get "RSS" }}
+                <link href="{{ .Permalink }}"
+                    rel="alternate"
+                    type="{{ .MediaType.Type }}"
+                    title="{{ $.Site.Title }}" />
+            {{ end }}
         {{ end }}
 
     	<!-- Theme's CSS -->
